@@ -191,10 +191,9 @@ channel name.
 ### Subscribing To Events Between Languages
 
 Pub/Sub is a bare bones protocol that is entirely language agnostic. Every major
-language has a usable Redis library, so the possibilities are wide open.
-As with any multi-service architecture, there are opportunities to
-lean on other languages and frameworks where your primary platform may fall
-short.
+language has a usable Redis library, so the possibilities are wide open.  As
+with any multi-service architecture, there are opportunities to lean on other
+languages and frameworks where your primary platform may fall short.
 
 For example, Ruby is notoriously bad at maintaining multiple concurrent
 connections. That's a perfect opportunity to write a small service in a platform
@@ -213,8 +212,8 @@ possible where HTTP falls flat. Allowing applications to broadcast events to
 arbitrary services is a path to highly scalable, fault tolerant, and loosely
 coupled services.
 
-It must be noted that Redis' implementation has notable caveats. Unlike some
-other implementations, such as [ZeroMQ][zmq], Redis has no guarantees on message
+It must be noted that Redis' implementation has caveats. Unlike some other
+implementations, such as [ZeroMQ][zmq], Redis has no guarantees on message
 delivery, no acknowledgements, and no persistence in the event of service or
 network failure. It's triumph is simplicity and ubiquity, but you'll want to
 look further into the world of Pub/Sub if persistence and reliability are

@@ -105,17 +105,21 @@ disabled, CDNs get involved, and asset minification smashes JavaScript together 
 unexpected ways. Those aren't the kind of problems you want to find out about
 only after you've shipped to production.
 
-## Integration Testing Enables Continous Deployment
+## Integration Testing Enables Continuous Deployment
 
-Notice that there hasn't been any mention of unit testing, generative testing,
-mutation testing, or any other in-depth analysis. All of the components of
-critical mass are focused around *integration* testing. Those other testing
-styles, unit testing in particular, are tools to help refine your code, explore
-edge cases, and allow confident refactoring. Integration testing is about verifying
-boundaries. It is those boundaries where friction between systems, modules,
-databases and any other isolated component becomes apparent.
+Note that there hasn't been any mention of unit testing, generative testing,
+mutation testing, or any other in-depth developer-centric testing. All of the
+components critical to building up a body of tests for continuous deployment are
+focused around integration. Other automated testing styles, unit testing in
+particular, are tools to help refine your code, explore edge cases, and allow
+confident refactoring. Integration testing is about verifying boundaries.
 
-When you can trust your integration tests, you can trust automated deployment.
+Boundaries are where friction builds up between layers of a system. Classes and
+modules will operate perfectly fine in a vacuum, but when you connect them to a
+database, a file system, and other disparate components things break. That
+places the initial burden of automated testing squarely on integration. Build up
+enough momentum in your integration tests and it will sustain itself between
+releases. Then and you can begin to trust in continuous deployment.
 
 [mfcd]: http://martinfowler.com/bliki/ContinuousDelivery.html#footnote-when
 [goos]: http://www.growing-object-oriented-software.com/
